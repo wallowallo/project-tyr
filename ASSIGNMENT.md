@@ -84,6 +84,8 @@ There are a few requirements to take into consideration:
 
 The web app is built using [SvelteKit](https://kit.svelte.dev/). You can find the source code in the root of the repository.
 
+You can also find additional documentation on the frontend app [here](./docs/frontend.md).
+
 _NOTE: If you prefer to implement the frontend in another framework, you are free to do so. You can either implement the frontend in another folder in this repository or create a new repository and send us the link._
 
 The web app is a simple ecommerce app that allows the user to add products to a cart and get the total price, including discounts.

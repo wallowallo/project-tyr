@@ -52,6 +52,8 @@ npm run dev
 npm run dev -- --open
 ```
 
+You can also find additional documentation on the frontend app [here](./docs/frontend.md).
+
 ### REST API
 
 Open a new terminal and start up the Ecommerce API with auto-reload using:
