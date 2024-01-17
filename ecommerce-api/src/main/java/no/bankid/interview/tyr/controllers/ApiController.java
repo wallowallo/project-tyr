@@ -27,6 +27,6 @@ public class ApiController {
 		 * TODO: Implement this method
 		 */
 
-		return Collections.singletonMap("price", 12222);
+		return Collections.singletonMap("price", 0);
 	}
 }
