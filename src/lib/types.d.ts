@@ -4,10 +4,12 @@ export type Product = {
     price: number;
 }
 
+export type Cart = string[];
+
 export type ProductPageData = {
     products: Product[];
 }
 
-export type CheckoutPageData = {
-    checkout: string[];
+export type CheckoutResponse = {
+    price: number;
 }

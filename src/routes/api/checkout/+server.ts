@@ -1,7 +1,13 @@
+import type { Cart, CheckoutResponse } from '$lib/types';
 import { json } from '@sveltejs/kit';
 
+/**
+ * Call Ecommerce API to calculate price of cart.
+ *  
+ * @returns {CheckoutResponse} Calculated price 
+ */
 export const POST = async ({request, fetch}) => {
-    const data = await request.json();
+    const data: Cart = await request.json();
     const res = await fetch(`http://localhost:8080/api/v1/checkout`, {
         method: 'POST',
         headers: {
@@ -10,6 +16,6 @@ export const POST = async ({request, fetch}) => {
         body: JSON.stringify(data)
     });
 
-    const responseData = await res.json();
+    const responseData: CheckoutResponse = await res.json();
     return json(responseData);
 }
