@@ -54,10 +54,11 @@ npm run dev -- --open
 
 ### REST API
 
-Run the following command (from repository root) to start the REST API with auto-reload:
+Open a new terminal and start up the Ecommerce API with auto-reload using:
 
 ```bash
-./mvnw -f ecommerce-api/pom.xml spring-boot:run
+cd ecommerce-api
+./mvnw spring-boot:run
 ```
 
 ## Assignment
@@ -67,4 +68,4 @@ Your assigment is split into two parts.
 1. Frontend styling and logic using Svelte and SvelteKit
 2. Implementing business logic in the Java Spring Boot REST API
 
-TODO
+You can find the instructions [here](./ASSIGNMENT.md).
