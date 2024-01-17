@@ -1,6 +1,6 @@
 <nav>
 	<a href="/">Home</a>
-	<a href="/ecommerce">Ecommerce</a>
+	<a href="/checkout">Checkout</a>
 </nav>
 
 <div class="layout">

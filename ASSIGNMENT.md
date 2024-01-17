@@ -91,7 +91,7 @@ The web app is a simple ecommerce app that allows the user to add products to a 
 There are some problems with the current implementation:
 
 * The current items in the cart are not shown and it is not possible to remove items from the cart.
-* The user need to press a "Checkout" button to calculate the total price of the cart.
+* The user need to press a button to calculate the total price of the cart.
 * The user interface is not styled. We have provided a [design in Figma](https://www.figma.com/file/VjvlYsZCoHNObTOk3OlCAn/BIDBAX-Tech-Interview-Assignment-Project-Tyr---Checkout?type=design&mode=design&t=cQyrqv3MRSe3R75V-1) that you can use as a reference.
 
 ### Requirements
@@ -101,12 +101,12 @@ There are some problems with the current implementation:
 1. Implement logic to show the added products in the cart.
 2. Implement logic to show the total price of the cart on every cart update. 
    * The total price should be calculated on the backend using the Ecommerce API
-   * You need to change the logic from clicking a button to "Checkout" to automatically calculate the total price when the cart is updated.
+   * You need to change the logic from clicking a button to automatically calculate the total price when the cart is updated.
 3. To the best of your ability (and time!), style the user interface as close as possible to the [given design in figma](https://www.figma.com/file/VjvlYsZCoHNObTOk3OlCAn/BIDBAX-Tech-Interview-Assignment-Project-Tyr---Checkout?type=design&mode=design&t=cQyrqv3MRSe3R75V-1).
 
 ## Our expectations
 
-We expect you to spend around 3-4 hours on this assignment. We are not expecting you to finish all the tasks, as we don’t want this task to take over your evenings - nor do we want to impose an unnecessarily stressful deadline.
+We expect you to spend around 3-5 hours on this assignment. We are not expecting you to finish all the tasks, as we don’t want this task to take over your evenings - nor do we want to impose an unnecessarily stressful deadline.
 
 How you approach the problem is more important to us than completing the challenge, therefore we expect you to include the following:
 * An ANSWER.md file that describes how you approached the problem and what you would improve if you were given more time

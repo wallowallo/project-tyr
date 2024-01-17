@@ -32,8 +32,6 @@
 	}
 </script>
 
-<h1>Webshop</h1>
-
 <h2>Products</h2>
 
 <ul>
@@ -42,5 +40,5 @@
 	{/each}
 </ul>
 
-<button on:click={checkout}>Checkout</button>
+<button on:click={checkout}>Calculate price</button>
 <p>Total: {total}</p>
