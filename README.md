@@ -25,12 +25,13 @@ You need to make sure you have installed the following:
 
 This project consists of two applications. 
 
-* A frontend web app built using [Sveltekit](https://kit.svelte.dev/) running on http://localhost:5173
-* The Ecommerce API - a Spring Boot REST API running on http://localhost:8080
+* A frontend web app built using [Sveltekit](https://kit.svelte.dev/) 
+    * The app sources are located in the root of the repository
+    * Runs on http://localhost:5173
+* The Ecommerce API - a Spring Boot REST API running on 
+    * The app sources are located under [./ecommerce-api](./ecommerce-api/)
+    * Runs on http://localhost:8080
 
-You need to be able to build and run both these apps. 
-
-*NOTE: It is **not** necessary to worry about building production grade distributions.*
 
 ## Developing
 
