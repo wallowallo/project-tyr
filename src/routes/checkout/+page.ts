@@ -1,4 +1,4 @@
-import type { Product } from "$lib/types";
+import type { Product } from "$lib/models/types";
 import products from "data/products.json";
 
 /**
@@ -6,5 +6,5 @@ import products from "data/products.json";
  * Exported in +page.svelte as data.products
  */
 export function load() {
-	return { products };
+	return { products } as { products: Product[] };
 }
