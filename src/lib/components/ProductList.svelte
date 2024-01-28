@@ -6,8 +6,9 @@
 
 	export let add: Function;
 
+	const action = { name: 'add', function: add };
 	const tableHeaders = ['Name', 'Price', ''];
 	const header = 'Products';
 </script>
 
-<ProductTable {products} {add} {tableHeaders} {header} />
+<ProductTable {products} {action} {tableHeaders} {header} />

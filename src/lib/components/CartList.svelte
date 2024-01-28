@@ -4,10 +4,11 @@
 
 	export let products: Product[] = [];
 
-	export let add: Function;
+	export let remove: Function;
 
+	const action = { name: 'remove', function: remove };
 	const tableHeaders = ['Name', 'Qty', 'Price', ''];
 	const header = 'Shopping Cart';
 </script>
 
-<ProductTable {products} {add} {tableHeaders} {header} />
+<ProductTable {products} {action} {tableHeaders} {header} />

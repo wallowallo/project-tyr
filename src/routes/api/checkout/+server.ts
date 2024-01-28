@@ -1,4 +1,4 @@
-import type { Cart, CheckoutResponse } from '$lib/types';
+import type { Cart, CheckoutResponse } from '$lib/models/types';
 import { json } from '@sveltejs/kit';
 
 /**

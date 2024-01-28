@@ -15,6 +15,11 @@
 		cart.push(product.id);
 	}
 
+	const remove = (product: Product) => {
+		console.log('removing product', product);
+		cart = cart.filter((id) => id !== product.id);
+	};
+
 	/**
 	 * Checkout the cart and get the total price by calling /api/checkout.
 	 */
@@ -38,7 +43,7 @@
 </div>
 
 <div class="productContent">
-	<CartList products={data.products} {add} />
+	<CartList products={data.products} {remove} />
 </div>
 
 <button on:click={checkout}>Calculate price</button>

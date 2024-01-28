@@ -2,7 +2,7 @@
 	import type { Product, CartItem } from '../models/types';
 
 	export let products: Product[] | CartItem[] = [];
-	export let add: Function;
+	export let action: { name: string; function: Function };
 	export let tableHeaders: string[] = [];
 	export let header = '';
 </script>
@@ -25,7 +25,18 @@
 						<td>{product[key]}</td>
 					{/if}
 				{/each}
-				<td><button class="add-button" on:click={() => add(product)}>Add</button></td>
+
+				{#if action.name === 'remove'}
+					<td>
+						<button class="remove-button" on:click={() => action.function(product)}>
+							<img src="/delete.svg" alt="remove" />
+						</button>
+					</td>
+				{/if}
+
+				{#if action.name === 'add'}
+					<td><button class="add-button" on:click={() => action.function(product)}>Add</button></td>
+				{/if}
 			</tr>
 		{/each}
 	</tbody>
@@ -50,6 +61,13 @@
 		background: #ffffff;
 		border: 2px solid black;
 		border-radius: 24px;
+		padding: 10px, 28px, 10px, 28px;
+		color: black;
+	}
+
+	.remove-button {
+		border: none;
+		background: #ffffff;
 		padding: 10px, 28px, 10px, 28px;
 		color: black;
 	}
