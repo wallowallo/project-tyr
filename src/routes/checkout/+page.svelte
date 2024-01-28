@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Cart, CheckoutResponse, Product, ProductPageData } from '$lib/models/types';
 	import ProductList from '$lib/components/ProductList.svelte';
+	import CartList from '$lib/components/CartList.svelte';
 
 	export let data: ProductPageData;
 	export let cart: Cart = [];
@@ -36,11 +37,16 @@
 	<ProductList products={data.products} {add} />
 </div>
 
+<div class="productContent">
+	<CartList products={data.products} {add} />
+</div>
+
 <button on:click={checkout}>Calculate price</button>
 <p>Total: {total}</p>
 
 <style>
 	.productContent {
+		margin-top: 10rem;
 		display: grid;
 		flex-direction: column;
 		align-items: center;

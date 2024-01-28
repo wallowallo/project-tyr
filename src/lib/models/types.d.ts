@@ -1,4 +1,5 @@
 export type Product = {
+    [key: string]: unknown;
     id: string;
     name: string;
     price: number;
@@ -12,4 +13,9 @@ export type ProductPageData = {
 
 export type CheckoutResponse = {
     price: number;
+}
+
+export type CartItem = Product & {
+    [key: string]: unknown;
+    quantity: number;
 }

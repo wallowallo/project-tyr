@@ -6,8 +6,8 @@
 
 	export let add: Function;
 
-	const tableHeaders = ['Name', 'Price', ''];
-	const header = 'Products';
+	const tableHeaders = ['Name', 'Qty', 'Price', ''];
+	const header = 'Shopping Cart';
 </script>
 
 <ProductTable {products} {add} {tableHeaders} {header} />
