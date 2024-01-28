@@ -7,7 +7,7 @@
 	export let header = '';
 </script>
 
-<h2>{header}</h2>
+<h4>{header}</h4>
 
 <table>
 	<thead>
@@ -46,6 +46,7 @@
 	table {
 		border-collapse: collapse;
 		width: 80%;
+		margin-bottom: 3rem;
 	}
 
 	th {
@@ -59,16 +60,25 @@
 
 	.add-button {
 		background: #ffffff;
-		border: 2px solid black;
+		border: 1px solid black;
 		border-radius: 24px;
-		padding: 10px, 28px, 10px, 28px;
+		padding: 5px 14px 5px 14px;
 		color: black;
+		&:hover {
+			cursor: pointer;
+			background-color: #f5e0ff;
+		}
 	}
 
 	.remove-button {
 		border: none;
 		background: #ffffff;
-		padding: 10px, 28px, 10px, 28px;
-		color: black;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	img {
+		width: 1.5rem;
 	}
 </style>

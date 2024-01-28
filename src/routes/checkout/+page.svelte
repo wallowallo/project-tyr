@@ -1,5 +1,11 @@
 <script lang="ts">
-	import type { Cart, CheckoutResponse, Product, ProductPageData } from '$lib/models/types';
+	import type {
+		Cart,
+		CartItem,
+		CheckoutResponse,
+		Product,
+		ProductPageData
+	} from '$lib/models/types';
 	import ProductList from '$lib/components/ProductList.svelte';
 	import CartList from '$lib/components/CartList.svelte';
 
@@ -7,17 +13,20 @@
 	export let cart: Cart = [];
 	export let total: number = 0;
 
+	let cartItems: CartItem[] = [];
+
 	/**
 	 * Add a product to the cart
 	 */
 	async function add(product: Product) {
 		console.log('adding product', product);
-		cart.push(product.id);
+		cart = [...cart, product.id];
+		cartItems = [...cartItems, { ...product, quantity: 1 }];
 	}
 
 	const remove = (product: Product) => {
 		console.log('removing product', product);
-		cart = cart.filter((id) => id !== product.id);
+		cartItems = cartItems.filter((item) => item.id !== product.id);
 	};
 
 	/**
@@ -38,24 +47,34 @@
 	}
 </script>
 
-<div class="productContent">
-	<ProductList products={data.products} {add} />
-</div>
+<div class="checkoutContainer">
+	<div class="productContent">
+		<ProductList products={data.products} {add} />
+	</div>
 
-<div class="productContent">
-	<CartList products={data.products} {remove} />
+	<div class="productContent">
+		<CartList products={cartItems} {remove} />
+		<p><strong>Total</strong> {total}</p>
+	</div>
 </div>
-
-<button on:click={checkout}>Calculate price</button>
-<p>Total: {total}</p>
 
 <style>
+	.checkoutContainer {
+		margin-top: 5rem;
+		display: flex;
+		flex-direction: column;
+	}
 	.productContent {
-		margin-top: 10rem;
 		display: grid;
 		flex-direction: column;
-		align-items: center;
 		width: 80%;
-		margin: 0 auto;
+	}
+
+	p {
+		text-align: right;
+		width: 46%;
+	}
+	strong {
+		margin-right: 2rem;
 	}
 </style>

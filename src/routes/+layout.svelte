@@ -1,10 +1,21 @@
-<nav>
-	<a href="/">Home</a>
-	<a href="/checkout">Checkout</a>
-</nav>
+<script>
+	import Nav from '$lib/components/Nav.svelte';
+</script>
 
-<div>
+<div class="layout">
+	<Nav />
 	<main>
 		<slot />
 	</main>
 </div>
+
+<style>
+	.layout {
+		display: flex;
+		flex-direction: row;
+	}
+
+	main {
+		flex: 1;
+	}
+</style>
