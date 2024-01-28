@@ -18,22 +18,26 @@
 	/**
 	 * Add a product to the cart
 	 */
-	async function add(product: Product) {
-		console.log('adding product', product);
+	const add = async (product: Product) => {
+		const existingCartItem = cartItems.find((item) => item.id === product.id);
+		if (existingCartItem) {
+			existingCartItem.quantity++;
+			cartItems = [...cartItems];
+		} else {
+			cartItems = [...cartItems, { ...product, quantity: 1 }];
+		}
 		cart = [...cart, product.id];
-		cartItems = [...cartItems, { ...product, quantity: 1 }];
-	}
-
-	const remove = (product: Product) => {
-		console.log('removing product', product);
-		cartItems = cartItems.filter((item) => item.id !== product.id);
+		checkout();
 	};
 
-	/**
-	 * Checkout the cart and get the total price by calling /api/checkout.
-	 */
+	const remove = async (product: Product) => {
+		console.log('removing product', product);
+		cartItems = cartItems.filter((item) => item.id !== product.id);
+		cart = cart.filter((id) => id !== product.id);
+		checkout();
+	};
+
 	async function checkout() {
-		console.log('cart', cart);
 		const response = await fetch('/api/checkout', {
 			method: 'POST',
 			body: JSON.stringify(cart),
@@ -44,6 +48,7 @@
 
 		const res: CheckoutResponse = await response.json();
 		total = res.price;
+		console.log('total', total);
 	}
 </script>
 

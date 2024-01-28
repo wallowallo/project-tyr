@@ -7,7 +7,7 @@
 	export let remove: Function;
 
 	const action = { name: 'remove', function: remove };
-	const tableHeaders = ['Name', 'Price', 'Qty', ''];
+	const tableHeaders = ['Name', 'Cost', 'Qty', ''];
 	const header = 'Shopping Cart';
 </script>
 
